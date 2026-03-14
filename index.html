@@ -20,14 +20,8 @@
     --green-bg: rgba(76,175,125,0.12);
     --red: #e05c5c;
     --red-bg: rgba(224,92,92,0.12);
-    --tag-black-bg: #f0ede6;
-    --tag-black-fg: #0e0e0e;
-    --tag-blue-bg: rgba(200,169,110,0.2);
-    --tag-blue-fg: #c8a96e;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -36,318 +30,55 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     padding: 2rem 1rem 4rem;
   }
-
-  header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    padding-top: 1rem;
-  }
-
-  header h1 {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--text);
-    line-height: 1.2;
-  }
-
-  header h1 span {
-    color: var(--accent);
-  }
-
-  header p {
-    margin-top: 8px;
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: 300;
-    letter-spacing: 0.06em;
-  }
-
-  .divider {
-    width: 40px;
-    height: 1px;
-    background: var(--accent);
-    margin: 14px auto 0;
-    opacity: 0.5;
-  }
-
-  #app {
-    width: 100%;
-    max-width: 560px;
-  }
-
-  .hud {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.2rem;
-  }
-
-  .hud-box {
-    font-size: 12px;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-
-  .hud-box span {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    margin-top: 2px;
-  }
-
-  .progress-track {
-    height: 2px;
-    background: var(--surface2);
-    border-radius: 2px;
-    margin-bottom: 1.8rem;
-    overflow: hidden;
-  }
-
-  .progress-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 2px;
-    transition: width 0.5s cubic-bezier(0.4,0,0.2,1);
-  }
-
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2rem;
-    margin-bottom: 1rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0.4;
-  }
-
-  .show-row {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 1.4rem;
-    flex-wrap: wrap;
-  }
-
-  .tag {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    padding: 4px 10px;
-    border-radius: 100px;
-    text-transform: uppercase;
-  }
-
-  .tag-black { background: var(--tag-black-bg); color: var(--tag-black-fg); }
-  .tag-gold { background: var(--tag-blue-bg); color: var(--tag-blue-fg); border: 1px solid rgba(200,169,110,0.3); }
-
-  .chef-name {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: clamp(1.6rem, 5vw, 2.2rem);
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
-
-  .question-label {
-    font-size: 13px;
-    color: var(--muted);
-    font-weight: 300;
-    margin-bottom: 1.8rem;
-  }
-
-  .question-label strong {
-    color: var(--accent);
-    font-weight: 500;
-  }
-
-  .choices {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .choice-btn {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 16px;
-    font-size: 13px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--text);
-    cursor: pointer;
-    text-align: left;
-    line-height: 1.4;
-    transition: background 0.15s, border-color 0.15s, transform 0.1s;
-    font-weight: 400;
-  }
-
-  .choice-btn:hover:not(:disabled) {
-    background: rgba(200,169,110,0.08);
-    border-color: rgba(200,169,110,0.4);
-    transform: translateY(-1px);
-  }
-
-  .choice-btn:active:not(:disabled) {
-    transform: translateY(0);
-  }
-
-  .choice-btn.correct {
-    background: var(--green-bg);
-    border-color: var(--green);
-    color: var(--green);
-  }
-
-  .choice-btn.wrong {
-    background: var(--red-bg);
-    border-color: var(--red);
-    color: var(--red);
-  }
-
-  .choice-btn.reveal {
-    background: var(--green-bg);
-    border-color: var(--green);
-    color: var(--green);
-  }
-
-  .feedback {
-    display: none;
-    font-size: 13px;
-    margin-top: 14px;
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-weight: 400;
-    line-height: 1.5;
-  }
-
+  header { text-align: center; margin-bottom: 2.5rem; padding-top: 1rem; }
+  header h1 { font-family: 'Nanum Myeongjo', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 800; color: var(--text); line-height: 1.2; }
+  header h1 span { color: var(--accent); }
+  header p { margin-top: 8px; font-size: 13px; color: var(--muted); font-weight: 300; letter-spacing: 0.06em; }
+  .divider { width: 40px; height: 1px; background: var(--accent); margin: 14px auto 0; opacity: 0.5; }
+  #app { width: 100%; max-width: 560px; }
+  .hud { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; }
+  .hud-box { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; text-transform: uppercase; }
+  .hud-box span { display: block; font-size: 20px; font-weight: 700; color: var(--text); margin-top: 2px; }
+  .progress-track { height: 2px; background: var(--surface2); border-radius: 2px; margin-bottom: 1.8rem; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.5s ease; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.4; }
+  .show-row { display: flex; gap: 6px; margin-bottom: 1.4rem; flex-wrap: wrap; }
+  .tag { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; padding: 4px 10px; border-radius: 100px; text-transform: uppercase; }
+  .tag-black { background: #f0ede6; color: #0e0e0e; }
+  .tag-gold { background: rgba(200,169,110,0.2); color: var(--accent); border: 1px solid rgba(200,169,110,0.3); }
+  .chef-name { font-family: 'Nanum Myeongjo', serif; font-size: clamp(1.6rem, 5vw, 2.2rem); font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .question-label { font-size: 13px; color: var(--muted); font-weight: 300; margin-bottom: 1.8rem; }
+  .question-label strong { color: var(--accent); font-weight: 500; }
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .choice-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 13px; font-family: 'Noto Sans KR', sans-serif; color: var(--text); cursor: pointer; text-align: left; line-height: 1.4; transition: background 0.15s, border-color 0.15s, transform 0.1s; }
+  .choice-btn:hover:not(:disabled) { background: rgba(200,169,110,0.08); border-color: rgba(200,169,110,0.4); transform: translateY(-1px); }
+  .choice-btn.correct { background: var(--green-bg) !important; border-color: var(--green) !important; color: var(--green) !important; }
+  .choice-btn.wrong   { background: var(--red-bg)   !important; border-color: var(--red)   !important; color: var(--red)   !important; }
+  .choice-btn.reveal  { background: var(--green-bg) !important; border-color: var(--green) !important; color: var(--green) !important; }
+  .feedback { display: none; font-size: 13px; margin-top: 14px; padding: 12px 16px; border-radius: 10px; line-height: 1.5; }
   .feedback.show { display: block; }
-  .feedback.ok { background: var(--green-bg); color: var(--green); border: 1px solid rgba(76,175,125,0.2); }
-  .feedback.bad { background: var(--red-bg); color: var(--red); border: 1px solid rgba(224,92,92,0.2); }
-
-  .next-btn {
-    display: none;
-    width: 100%;
-    padding: 14px;
-    background: transparent;
-    border: 1px solid var(--border-hover);
-    border-radius: 10px;
-    font-size: 14px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: var(--text);
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s;
-    letter-spacing: 0.02em;
-  }
-
-  .next-btn.show { display: block; }
+  .feedback.ok  { background: var(--green-bg); color: var(--green); border: 1px solid rgba(76,175,125,0.2); }
+  .feedback.bad { background: var(--red-bg);   color: var(--red);   border: 1px solid rgba(224,92,92,0.2); }
+  .next-btn { display: none; width: 100%; padding: 14px; background: transparent; border: 1px solid var(--border-hover); border-radius: 10px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; color: var(--text); cursor: pointer; transition: background 0.15s, border-color 0.15s, color 0.15s; }
   .next-btn:hover { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
-
-  /* Result */
-  .result-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .result-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0.6;
-  }
-
-  .result-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .result-score {
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 4rem;
-    font-weight: 800;
-    color: var(--accent);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .result-total {
-    font-size: 13px;
-    color: var(--muted);
-    margin-bottom: 6px;
-  }
-
-  .result-msg {
-    font-size: 15px;
-    color: var(--text);
-    margin-bottom: 2rem;
-    font-weight: 300;
-  }
-
-  .result-list {
-    text-align: left;
-    border-top: 1px solid var(--border);
-    padding-top: 1.2rem;
-    margin-bottom: 2rem;
-  }
-
-  .result-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 13px;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
+  .result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+  .result-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); opacity: 0.6; }
+  .result-icon  { font-size: 3rem; margin-bottom: 1rem; }
+  .result-score { font-family: 'Nanum Myeongjo', serif; font-size: 4rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .result-total { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .result-msg   { font-size: 15px; color: var(--text); margin-bottom: 2rem; font-weight: 300; }
+  .result-list  { text-align: left; border-top: 1px solid var(--border); padding-top: 1.2rem; margin-bottom: 2rem; }
+  .result-row   { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; padding: 8px 0; border-bottom: 1px solid var(--border); }
   .result-row:last-child { border-bottom: none; }
-
-  .r-icon { flex-shrink: 0; font-weight: 700; margin-top: 1px; font-size: 13px; }
-  .r-name { font-weight: 500; color: var(--text); }
+  .r-icon  { flex-shrink: 0; font-weight: 700; margin-top: 1px; }
+  .r-name  { font-weight: 500; color: var(--text); }
   .r-genre { color: var(--muted); font-size: 12px; margin-top: 2px; }
-
-  .restart-btn {
-    padding: 13px 36px;
-    background: var(--accent);
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    font-family: 'Noto Sans KR', sans-serif;
-    color: #0e0e0e;
-    cursor: pointer;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    transition: opacity 0.15s, transform 0.1s;
-  }
-
+  .restart-btn { padding: 13px 36px; background: var(--accent); border: none; border-radius: 10px; font-size: 14px; font-family: 'Noto Sans KR', sans-serif; color: #0e0e0e; cursor: pointer; font-weight: 700; transition: opacity 0.15s, transform 0.1s; }
   .restart-btn:hover { opacity: 0.88; transform: translateY(-1px); }
-  .restart-btn:active { transform: translateY(0); }
-
-  @media (max-width: 400px) {
-    .choices { grid-template-columns: 1fr; }
-    .card { padding: 1.4rem; }
-  }
+  @media (max-width: 400px) { .choices { grid-template-columns: 1fr; } .card { padding: 1.4rem; } }
 </style>
 </head>
 <body>
@@ -361,124 +92,159 @@
 <div id="app"></div>
 
 <script>
-const allChefs = [
-  { name:"이연복", show:"냉부", genre:"중식", detail:"'목란' 오너셰프" },
-  { name:"최현석", show:"흑백+냉부", genre:"양식 (파인다이닝)", detail:"'달리아 다이닝' 오너셰프" },
-  { name:"정호영", show:"냉부", genre:"일식", detail:"냉부 오리지널 멤버" },
-  { name:"김풍", show:"냉부", genre:"창의·자취요리", detail:"냉부 최다 출연 셰프 중 하나" },
-  { name:"에드워드 리", show:"냉부", genre:"한국계 미국 퓨전", detail:"켄터키 기반 한미 퓨전 요리" },
-  { name:"임태훈", show:"흑백+냉부", genre:"중식", detail:"'도량' 오너셰프" },
-  { name:"최강록", show:"흑백", genre:"한식 (창작)", detail:"흑백요리사 시즌1 우승자" },
-  { name:"권성준", show:"흑백", genre:"이탈리안", detail:"나폴리 스타일 이탈리안 전문" },
-  { name:"여경래", show:"흑백+냉부", genre:"중식", detail:"세계중국조리사 국제심사위원" },
-  { name:"정지선", show:"흑백+냉부", genre:"중식 (딤섬)", detail:"'티엔미미' 오너셰프" },
-  { name:"김도윤", show:"흑백", genre:"한식 (파인다이닝)", detail:"미쉐린 1스타 '윤서울'" },
-  { name:"안유성", show:"흑백", genre:"일식", detail:"일식 조리 명장 칭호 보유" },
-  { name:"샘킴", show:"냉부", genre:"이탈리안·양식", detail:"이탈리안 기반 양식 전문" },
-  { name:"오세득", show:"냉부", genre:"모던 한식", detail:"모던 한식 선구자" },
-  { name:"윤남노", show:"흑백+냉부", genre:"한식 (파인다이닝)", detail:"냉부 시즌2 합류" },
-  { name:"이미영", show:"흑백+냉부", genre:"급식·한식", detail:"냉부 시즌2 합류" },
-];
+(function () {
+  const allChefs = [
+    { name:"이연복",      show:"냉부",      genre:"중식",              detail:"'목란' 오너셰프" },
+    { name:"최현석",      show:"흑백+냉부", genre:"양식 (파인다이닝)", detail:"'달리아 다이닝' 오너셰프" },
+    { name:"정호영",      show:"냉부",      genre:"일식",              detail:"냉부 오리지널 멤버" },
+    { name:"김풍",        show:"냉부",      genre:"창의·자취요리",     detail:"냉부 최다 출연 셰프 중 하나" },
+    { name:"에드워드 리", show:"냉부",      genre:"한국계 미국 퓨전",  detail:"켄터키 기반 한미 퓨전 요리" },
+    { name:"임태훈",      show:"흑백+냉부", genre:"중식",              detail:"'도량' 오너셰프" },
+    { name:"최강록",      show:"흑백",      genre:"한식 (창작)",       detail:"흑백요리사 시즌1 우승자" },
+    { name:"권성준",      show:"흑백",      genre:"이탈리안",          detail:"나폴리 스타일 이탈리안 전문" },
+    { name:"여경래",      show:"흑백+냉부", genre:"중식",              detail:"세계중국조리사 국제심사위원" },
+    { name:"정지선",      show:"흑백+냉부", genre:"중식 (딤섬)",       detail:"'티엔미미' 오너셰프" },
+    { name:"김도윤",      show:"흑백",      genre:"한식 (파인다이닝)", detail:"미쉐린 1스타 '윤서울'" },
+    { name:"안유성",      show:"흑백",      genre:"일식",              detail:"일식 조리 명장 칭호 보유" },
+    { name:"샘킴",        show:"냉부",      genre:"이탈리안·양식",     detail:"이탈리안 기반 양식 전문" },
+    { name:"오세득",      show:"냉부",      genre:"모던 한식",         detail:"모던 한식 선구자" },
+    { name:"윤남노",      show:"흑백+냉부", genre:"한식 (파인다이닝)", detail:"냉부 시즌2 합류" },
+    { name:"이미영",      show:"흑백+냉부", genre:"급식·한식",         detail:"냉부 시즌2 합류" },
+  ];
 
-const genres = [...new Set(allChefs.map(c => c.genre))];
-function shuffle(a) { return [...a].sort(() => Math.random() - 0.5); }
-function getChoices(correct) {
-  return shuffle([correct, ...shuffle(genres.filter(g => g !== correct)).slice(0, 3)]);
-}
+  const genres = [...new Set(allChefs.map(c => c.genre))];
 
-let questions=[], current=0, score=0, answers=[], answered=false;
-
-function init() {
-  questions = shuffle(allChefs).slice(0, 10);
-  current = 0; score = 0; answers = []; answered = false;
-  renderQ();
-}
-
-function renderQ() {
-  answered = false;
-  const app = document.getElementById('app');
-  if (current >= questions.length) { renderResult(); return; }
-  const q = questions[current];
-  const choices = getChoices(q.genre);
-  const pct = Math.round(current / questions.length * 100);
-
-  let showHTML = '';
-  if (q.show.includes('흑백')) showHTML += '<span class="tag tag-black">흑백요리사</span>';
-  if (q.show.includes('냉부')) showHTML += '<span class="tag tag-gold">냉장고를 부탁해</span>';
-
-  const choicesHTML = choices.map((c, i) =>
-    `<button class="choice-btn" id="cb${i}" onclick="handleAnswer(${i},'${c.replace(/'/g,"\\'")}','${q.genre.replace(/'/g,"\\'")}','${q.detail.replace(/'/g,"\\'")}'">${c}</button>`
-  ).join('');
-
-  app.innerHTML = `
-    <div class="hud">
-      <div class="hud-box">문제<span>${current + 1} / ${questions.length}</span></div>
-      <div class="hud-box" style="text-align:right;">점수<span id="sc">${score}</span></div>
-    </div>
-    <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
-    <div class="card">
-      <div class="show-row">${showHTML}</div>
-      <div class="chef-name">${q.name} 셰프</div>
-      <div class="question-label">이 셰프의 <strong>전문 요리 장르</strong>는?</div>
-      <div class="choices" id="choicesGrid">${choicesHTML}</div>
-      <div class="feedback" id="fb"></div>
-    </div>
-    <button class="next-btn" id="nb" onclick="nextQ()">${current + 1 < questions.length ? '다음 문제 →' : '결과 보기 →'}</button>
-  `;
-}
-
-function handleAnswer(idx, chosen, correct, detail) {
-  if (answered) return;
-  answered = true;
-  const ok = (chosen === correct);
-  if (ok) score++;
-  answers.push({ name: questions[current].name, correct: ok, genre: correct });
-  const btns = document.querySelectorAll('#choicesGrid .choice-btn');
-  btns.forEach(b => b.disabled = true);
-  btns[idx].classList.add(ok ? 'correct' : 'wrong');
-  if (!ok) {
-    btns.forEach(b => { if (b.textContent.trim() === correct) b.classList.add('reveal'); });
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   }
-  const fb = document.getElementById('fb');
-  fb.className = 'feedback show ' + (ok ? 'ok' : 'bad');
-  fb.textContent = ok ? '정답! ' + detail : '오답! 정답은 "' + correct + '" — ' + detail;
-  document.getElementById('sc').textContent = score;
-  document.getElementById('nb').classList.add('show');
-}
 
-function nextQ() { current++; renderQ(); }
+  function getChoices(correct) {
+    return shuffle([correct, ...shuffle(genres.filter(g => g !== correct)).slice(0, 3)]);
+  }
 
-function renderResult() {
-  const app = document.getElementById('app');
-  const pct = Math.round(score / questions.length * 100);
-  let icon, msg;
-  if (pct === 100) { icon = '🏆'; msg = '완벽해요! 진정한 셰프 박사'; }
-  else if (pct >= 80) { icon = '👨‍🍳'; msg = '훌륭해요! 요리 예능 진성팬'; }
-  else if (pct >= 60) { icon = '🍳'; msg = '나쁘지 않아요! 조금만 더 공부'; }
-  else { icon = '🥄'; msg = '복습이 필요해요! 다시 도전해봐요'; }
+  let questions, current, score, answers, answered;
 
-  const rows = answers.map(a => `
-    <div class="result-row">
-      <span class="r-icon" style="color:${a.correct ? 'var(--green)' : 'var(--red)'};">${a.correct ? '✓' : '✗'}</span>
-      <div>
-        <div class="r-name">${a.name} 셰프</div>
-        <div class="r-genre">${a.genre}</div>
+  function init() {
+    questions = shuffle(allChefs).slice(0, 10);
+    current = 0; score = 0; answers = []; answered = false;
+    renderQ();
+  }
+
+  function renderQ() {
+    answered = false;
+    const app = document.getElementById('app');
+    if (current >= questions.length) { renderResult(); return; }
+
+    const q = questions[current];
+    const choices = getChoices(q.genre);
+    const pct = Math.round(current / questions.length * 100);
+
+    let showHTML = '';
+    if (q.show.includes('흑백')) showHTML += '<span class="tag tag-black">흑백요리사</span>';
+    if (q.show.includes('냉부'))  showHTML += '<span class="tag tag-gold">냉장고를 부탁해</span>';
+
+    app.innerHTML = `
+      <div class="hud">
+        <div class="hud-box">문제<span>${current + 1} / ${questions.length}</span></div>
+        <div class="hud-box" style="text-align:right;">점수<span id="sc">${score}</span></div>
       </div>
-    </div>`).join('');
+      <div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div>
+      <div class="card">
+        <div class="show-row">${showHTML}</div>
+        <div class="chef-name">${q.name} 셰프</div>
+        <div class="question-label">이 셰프의 <strong>전문 요리 장르</strong>는?</div>
+        <div class="choices" id="choicesGrid"></div>
+        <div class="feedback" id="fb"></div>
+      </div>
+      <button class="next-btn" id="nb">${current + 1 < questions.length ? '다음 문제 →' : '결과 보기 →'}</button>
+    `;
 
-  app.innerHTML = `
-    <div class="result-card">
-      <div class="result-icon">${icon}</div>
-      <div class="result-score">${score}</div>
-      <div class="result-total">/ ${questions.length} 문제</div>
-      <div class="result-msg">${msg}</div>
-      <div class="result-list">${rows}</div>
-      <button class="restart-btn" onclick="init()">다시 도전하기</button>
-    </div>
-  `;
-}
+    const grid = document.getElementById('choicesGrid');
+    choices.forEach(function(c) {
+      const btn = document.createElement('button');
+      btn.className = 'choice-btn';
+      btn.textContent = c;
+      btn.addEventListener('click', function() {
+        if (answered) return;
+        handleAnswer(btn, c, q.genre, q.detail);
+      });
+      grid.appendChild(btn);
+    });
 
-init();
+    document.getElementById('nb').addEventListener('click', function() {
+      current++;
+      renderQ();
+    });
+  }
+
+  function handleAnswer(clickedBtn, chosen, correct, detail) {
+    answered = true;
+    const ok = (chosen === correct);
+    if (ok) score++;
+    answers.push({ name: questions[current].name, correct: ok, genre: correct });
+
+    const allBtns = document.querySelectorAll('.choice-btn');
+    allBtns.forEach(function(b) {
+      b.disabled = true;
+      if (b.textContent === correct && !ok) b.classList.add('reveal');
+    });
+    clickedBtn.classList.add(ok ? 'correct' : 'wrong');
+
+    const fb = document.getElementById('fb');
+    fb.className = 'feedback show ' + (ok ? 'ok' : 'bad');
+    fb.textContent = ok
+      ? '정답! ' + detail
+      : '오답! 정답은 "' + correct + '" — ' + detail;
+
+    document.getElementById('sc').textContent = score;
+    document.getElementById('nb').style.display = 'block';
+  }
+
+  function renderResult() {
+    const app = document.getElementById('app');
+    const pct = Math.round(score / questions.length * 100);
+    let icon, msg;
+    if      (pct === 100) { icon = '🏆'; msg = '완벽해요! 진정한 셰프 박사'; }
+    else if (pct >= 80)   { icon = '👨‍🍳'; msg = '훌륭해요! 요리 예능 진성팬'; }
+    else if (pct >= 60)   { icon = '🍳'; msg = '나쁘지 않아요! 조금만 더 공부'; }
+    else                  { icon = '🥄'; msg = '복습이 필요해요! 다시 도전해봐요'; }
+
+    const listDiv = document.createElement('div');
+    listDiv.className = 'result-list';
+    answers.forEach(function(a) {
+      const row = document.createElement('div');
+      row.className = 'result-row';
+      row.innerHTML = `
+        <span class="r-icon" style="color:${a.correct ? 'var(--green)' : 'var(--red)'};">${a.correct ? '✓' : '✗'}</span>
+        <div>
+          <div class="r-name">${a.name} 셰프</div>
+          <div class="r-genre">${a.genre}</div>
+        </div>`;
+      listDiv.appendChild(row);
+    });
+
+    app.innerHTML = `
+      <div class="result-card">
+        <div class="result-icon">${icon}</div>
+        <div class="result-score">${score}</div>
+        <div class="result-total">/ ${questions.length} 문제</div>
+        <div class="result-msg">${msg}</div>
+        <div id="resultList"></div>
+        <button class="restart-btn" id="restartBtn">다시 도전하기</button>
+      </div>
+    `;
+
+    document.getElementById('resultList').appendChild(listDiv);
+    document.getElementById('restartBtn').addEventListener('click', init);
+  }
+
+  init();
+})();
 </script>
 </body>
 </html>
